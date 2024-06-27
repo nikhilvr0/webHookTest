@@ -29,6 +29,6 @@ jobs:
       - name: Send Push Event to API
         run: |
           cat $GITHUB_EVENT_PATH | jq '.' > event_payload.json
-          curl -X POST "http://localhost:3001/api" \
+          curl -X POST "http://localhost:3001/v1/api" \
           -H "Content-Type: application/json" \
           -d @event_payload.json
